@@ -3,17 +3,21 @@ define(function () {
 
     function NameGenerator() { }
 
+    NameGenerator.ongoingCount = 100000;
+
     NameGenerator.generateStarName = function () {
         var str = 'ST-';
-        var rand = Math.ceil(Math.random() * 99999);
+        var rand = NameGenerator.ongoingCount;
         str = str + rand.toString(16);
+        NameGenerator.ongoingCount++;
         return str.toUpperCase();
     };
 
     NameGenerator.generatePlanetName = function () {
-        var str = 'PL-';
-        var rand = Math.ceil(Math.random() * 99999);
+        var str = 'AB-';
+        var rand = NameGenerator.ongoingCount;
         str = str + rand.toString(16);
+        NameGenerator.ongoingCount++;
         return str.toUpperCase();
     };
 
